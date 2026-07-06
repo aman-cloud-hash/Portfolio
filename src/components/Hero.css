@@ -91,15 +91,16 @@
 /* Responsive */
 @media (max-width: 768px) {
   .czar-hero {
-    padding-top: calc(var(--navbar-height) + 30px);
+    min-height: auto;
+    padding-top: calc(var(--navbar-height) + 40px);
   }
 
   .czar-hero__text-wrapper {
-    margin-top: var(--space-2xl);
+    margin-top: 0;
   }
 
   .czar-hero__portrait-container {
     max-width: 320px;
-    margin-top: auto;
+    margin-top: 40px;
   }
 }
