@@ -1,0 +1,126 @@
+/* ============================================
+   Contact CSS
+   ============================================ */
+
+.czar-contact {
+  background-color: var(--bg-primary);
+}
+
+.czar-contact__layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+/* Left side details */
+.czar-contact__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  position: sticky;
+  top: calc(var(--navbar-height) + 60px);
+}
+
+.czar-contact__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-tertiary);
+}
+
+.czar-contact__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.czar-contact__desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Right side form */
+.czar-contact__wrapper {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-card);
+  padding: var(--space-2xl);
+}
+
+.czar-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.czar-contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.czar-contact__field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.czar-contact__field input,
+.czar-contact__field textarea {
+  padding: 14px 18px;
+  font-size: 14px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color-strong);
+  border-radius: var(--border-radius-card);
+  color: var(--text-primary);
+  outline: none;
+  font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.czar-contact__field input::placeholder,
+.czar-contact__field textarea::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.75;
+}
+
+.czar-contact__field input:focus,
+.czar-contact__field textarea:focus {
+  border-color: var(--text-primary);
+}
+
+.czar-contact__field textarea {
+  resize: vertical;
+}
+
+.czar-contact__submit {
+  width: 100%;
+  padding: 14px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.czar-contact__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .czar-contact__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+  .czar-contact__header {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .czar-contact__wrapper {
+    padding: var(--space-lg);
+  }
+}

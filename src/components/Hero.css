@@ -1,0 +1,105 @@
+/* ============================================
+   Hero CSS
+   ============================================ */
+
+.czar-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* Align cutout at bottom */
+  padding-top: calc(var(--navbar-height) + 60px);
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+.czar-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  justify-content: flex-start;
+  /* Flow items sequentially to avoid pushing them to extremes */
+}
+
+.czar-hero__text-wrapper {
+  margin-top: 0;
+  /* Sit higher, closer to nav pill */
+  max-width: 860px;
+}
+
+.czar-hero__headline {
+  font-size: clamp(2.4rem, 6.2vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.czar-hero__subheadline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.czar-hero__portrait-container {
+  width: 100%;
+  max-width: 774px;
+  /* Matches exact size (774px) of jonnyczar.com */
+  margin-top: auto;
+  /* Push cleanly to touch the bottom edge of 100vh */
+  margin-bottom: 0px;
+  /* Shifts the portrait slightly upwards */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.czar-hero__portrait {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  /* Blends the white background of the photo away completely */
+  filter: brightness(1.03);
+  /* Pushes near-white background pixels to absolute pure white */
+}
+
+[data-theme="dark"] .czar-hero__portrait {
+  filter: contrast(1.2) brightness(0.8) invert(0.02);
+  /* dark theme blends */
+  mix-blend-mode: lighten;
+}
+
+.czar-hero__bottom-gradient {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--bg-primary) 0%, transparent 100%);
+  z-index: calc(var(--z-base) + 1);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .czar-hero {
+    padding-top: calc(var(--navbar-height) + 30px);
+  }
+
+  .czar-hero__text-wrapper {
+    margin-top: var(--space-2xl);
+  }
+
+  .czar-hero__portrait-container {
+    max-width: 320px;
+    margin-top: auto;
+  }
+}

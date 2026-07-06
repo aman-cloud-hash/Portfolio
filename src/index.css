@@ -1,0 +1,214 @@
+/* ============================================
+   Jonny Czar 2024 Style Portfolio
+   Baseline Reset, Typography, Grid, and Color Tokens
+   ============================================ */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ---------- CSS Reset ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+/* ---------- CSS Variables (Light Theme Baseline) ---------- */
+:root {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F6F6F6;
+  --bg-tertiary: #EFEFEF;
+  --text-primary: #000000;
+  --text-secondary: #5F5F5F;
+  --text-tertiary: #9B9B9B;
+  
+  --accent-color: #000000;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-color-strong: rgba(0, 0, 0, 0.16);
+
+  --font-family: 'Inter', sans-serif;
+  --border-radius-pill: 9999px;
+  --border-radius-card: 28px;
+  --border-radius-button: 9999px;
+
+  --shadow-nav: 0 4px 30px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.02);
+
+  --navbar-height: 80px;
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 450ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --space-unit: 8px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+
+  --z-sticky: 1000;
+  --z-base: 1;
+}
+
+/* ---------- CSS Variables (Dark Theme Baseline) ---------- */
+[data-theme="dark"] {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #121212;
+  --bg-tertiary: #1C1C1C;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-tertiary: #606060;
+  
+  --accent-color: #FFFFFF;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-strong: rgba(255, 255, 255, 0.16);
+
+  --shadow-nav: 0 4px 35px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 10px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Utility Layouts ---------- */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-2xl);
+  width: 100%;
+}
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+/* ---------- General Typography ---------- */
+h1, h2, h3, h4 {
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+p {
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ---------- Theme Switcher & Floating Pill Styles ---------- */
+.pill-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--border-radius-pill);
+  transition: all var(--transition-base);
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  gap: var(--space-sm);
+}
+
+.pill-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+[data-theme="dark"] .pill-button:hover {
+  box-shadow: 0 8px 24px rgba(255,255,255,0.1);
+}
+
+.pill-button--secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color-strong);
+}
+
+.pill-button--secondary:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* ---------- Tags ---------- */
+.czar-tag {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: var(--border-radius-pill);
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ---------- Selection and Scrollbar ---------- */
+::selection {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color-strong);
+  border-radius: var(--border-radius-pill);
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Responsiveness Defaults ---------- */
+@media (max-width: 968px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+}

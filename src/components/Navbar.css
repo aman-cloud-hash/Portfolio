@@ -1,0 +1,158 @@
+/* ============================================
+   Navbar CSS
+   ============================================ */
+
+.czar-header {
+  position: fixed;
+  top: 24px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: var(--z-sticky);
+  pointer-events: none; /* Click pass-through outside menu container */
+}
+
+.czar-nav-container {
+  pointer-events: auto; /* Enable clicks */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.czar-nav-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-pill);
+  box-shadow: var(--shadow-nav);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  gap: var(--space-md);
+  transition: border-color var(--transition-base), background-color var(--transition-base);
+}
+
+.czar-nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: var(--space-md);
+}
+
+.czar-nav-link {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+  padding: 8px 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.czar-nav-link:hover,
+.czar-nav-link.active {
+  color: var(--text-primary);
+}
+
+.czar-nav-link.logo-link {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-right: var(--space-sm);
+}
+
+/* Hamburger button (Mobile only) */
+.czar-hamburger {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  margin-left: var(--space-sm);
+}
+
+.czar-hamburger-bar {
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: 1px;
+}
+
+/* Hamburger Transform to X on active open state */
+.czar-hamburger-bar:first-child.open {
+  transform: rotate(45deg);
+}
+
+.czar-hamburger-bar:nth-child(2).open {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.czar-hamburger-bar:last-child.open {
+  transform: rotate(-45deg);
+}
+
+/* Mobile Dropdown Drawer */
+.czar-mobile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  width: 220px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: var(--shadow-nav);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: var(--space-md);
+  z-index: 99;
+}
+
+.czar-mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.czar-mobile-nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.czar-mobile-nav-link:hover,
+.czar-mobile-nav-link.active {
+  color: var(--text-primary);
+}
+
+/* ---------- Responsive Breakpoint ---------- */
+@media (max-width: 768px) {
+  .czar-header {
+    top: 16px;
+  }
+  .desktop-only {
+    display: none !important; /* Hide standard nav list on tablet/mobile */
+  }
+  .czar-hamburger {
+    display: flex; /* Show hamburger button */
+  }
+  .czar-nav-pill {
+    padding: 8px 20px;
+    width: auto;
+  }
+}

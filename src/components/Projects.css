@@ -1,0 +1,86 @@
+/* ============================================
+   Projects CSS
+   ============================================ */
+
+.czar-work {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.czar-work__layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+/* Sidebar Styling */
+.czar-work__sidebar {
+  position: sticky;
+  top: calc(var(--navbar-height) + 60px);
+}
+
+.czar-work__sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.czar-work__sidebar-header {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-sm);
+}
+
+.czar-work__toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.czar-work__toc-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+  padding: 4px 0 4px 20px;
+}
+
+.czar-work__toc-link:hover,
+.czar-work__toc-link.active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.czar-work__toc-dot {
+  position: absolute;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-primary);
+}
+
+/* Scroll Content */
+.czar-work__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4xl);
+}
+
+@media (max-width: 968px) {
+  .czar-work__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+  .czar-work__sidebar {
+    display: none; /* Completely hide sidebar TOC navigation on mobile screens */
+  }
+}
