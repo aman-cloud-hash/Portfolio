@@ -21,11 +21,6 @@
   top: calc(var(--navbar-height) + 40px);
 }
 
-.czar-highlights__logo-badge {
-  font-size: 3rem;
-  margin-bottom: var(--space-lg);
-}
-
 .czar-highlights__main-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
