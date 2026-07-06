@@ -97,6 +97,9 @@
 
 /* Responsive */
 @media (max-width: 968px) {
+  .czar-highlights.section {
+    padding-top: var(--space-xl);
+  }
   .czar-highlights__grid {
     grid-template-columns: 1fr;
     gap: var(--space-3xl);

@@ -92,7 +92,7 @@
 @media (max-width: 768px) {
   .czar-hero {
     min-height: auto;
-    padding-top: calc(var(--navbar-height) + 40px);
+    padding-top: calc(var(--navbar-height) + 10px);
   }
 
   .czar-hero__text-wrapper {
