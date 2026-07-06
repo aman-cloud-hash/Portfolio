@@ -107,11 +107,37 @@
   .czar-highlights__main {
     position: static;
   }
+  .czar-highlights__main-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
 }
 
 @media (max-width: 580px) {
+  .czar-highlights__main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .czar-highlights__list {
     grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    gap: var(--space-4xl); /* Much larger gap between items on mobile */
+  }
+  .czar-highlight-item {
+    align-items: center;
+    text-align: center;
+  }
+  .czar-highlight-item__icon {
+    font-size: 2.5rem; /* Larger icon on mobile */
+    margin-bottom: var(--space-md);
+  }
+  .czar-highlight-item__title {
+    font-size: 1.25rem;
+  }
+  .czar-highlights__main-title {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+  }
+  .czar-highlights__main-desc {
+    font-size: 14px;
   }
 }

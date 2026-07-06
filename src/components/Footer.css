@@ -57,11 +57,27 @@
 
 /* Responsive */
 @media (max-width: 600px) {
+  .czar-footer {
+    padding: var(--space-xl) 0;
+  }
   .czar-footer__inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--space-lg);
   }
   .czar-footer__social-links {
     gap: var(--space-md);
+  }
+  .czar-footer__logo {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .czar-footer__social-links {
+    gap: var(--space-sm);
+  }
+  .czar-footer__social-links a {
+    font-size: 12px;
   }
 }

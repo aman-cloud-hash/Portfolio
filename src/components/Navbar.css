@@ -144,6 +144,10 @@
 @media (max-width: 768px) {
   .czar-header {
     top: 16px;
+    left: 0;
+    right: 0;
+    padding: 0 var(--space-md);
+    justify-content: center;
   }
   .desktop-only {
     display: none !important; /* Hide standard nav list on tablet/mobile */
@@ -154,5 +158,21 @@
   .czar-nav-pill {
     padding: 8px 20px;
     width: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .czar-header {
+    padding: 0 var(--space-sm);
+  }
+  .czar-nav-pill {
+    padding: 8px 16px;
+  }
+  .czar-mobile-dropdown {
+    width: 90vw;
+  }
+  .czar-mobile-nav-link {
+    padding: 10px 12px;
+    font-size: 15px;
   }
 }

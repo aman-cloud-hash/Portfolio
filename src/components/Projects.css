@@ -83,4 +83,13 @@
   .czar-work__sidebar {
     display: none; /* Completely hide sidebar TOC navigation on mobile screens */
   }
+  .czar-work__content {
+    gap: var(--space-3xl);
+  }
+}
+
+@media (max-width: 580px) {
+  .czar-work__content {
+    gap: var(--space-2xl);
+  }
 }
